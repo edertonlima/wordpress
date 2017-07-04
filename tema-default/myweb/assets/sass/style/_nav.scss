@@ -1,0 +1,150 @@
+.nav {
+	margin-top: 6px;
+	width: 100%;
+	float: left;
+
+	ul {
+		text-align: right;
+
+		li {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+
+			a {
+				font-size: 1rem;
+				color: #ffffff;
+				font-weight: $light;
+				padding: 0 20px 5px;
+				border-bottom: 5px solid #000000;
+				text-transform: uppercase;
+				text-decoration: none;
+				@include animacao();
+			}
+
+			&:hover {
+				ul {
+					display: block!important;
+					visibility: visible!important;
+				}
+			}
+
+
+			ul {
+				display: none;
+				height: 100px;
+				width: 100%;
+				position: fixed;
+				left: 0;
+				top: 81px;
+				z-index: 999;
+				text-align: center;
+
+				li {
+					height: 100px;
+
+					a {
+						font-size: 1.5rem;
+						line-height: 1.5rem;
+						padding: 0 20px 0 100px;
+						border-bottom: 0;
+						display: table-cell;
+						vertical-align: middle;
+						height: 100px;
+						box-sizing: content-box;
+						text-align: left;
+						background-position: left top;
+						background-repeat: no-repeat;
+						//text-indent: -100000px;
+					}
+				}
+			}
+
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: 800px){
+	
+	}
+}
+
+/* menu mobile */
+.menu-mobile {
+	display: none;
+	float: right;
+	width: 40px;
+	height: 30px;
+	margin-top: 16px;
+	margin-left: 20px;
+	text-decoration: none;
+	position: relative;
+	z-index: 99999;
+
+	@media all and (max-width: 800px) {
+		display: block;
+	}
+
+	span {
+		display: block;
+
+		em {
+			font-style: normal;
+			color: #ffffff;
+			font-size: 3rem;
+			line-height: 2rem;
+			display: block;
+			margin-top: -2px;
+			@include animacao();
+
+			&:hover {
+				color: $laranja;
+			}
+		}
+	}
+
+	&.active {
+		text-align: center;
+	}
+
+	&:not(.active){
+		span {
+			position: relative;
+
+			em {
+				display: none;
+			}
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+			}
+
+			&:before {
+				top: 11px;
+			}
+
+			&:after {
+				top: 22px;
+			}
+		}
+
+		span, span:before, span:after {
+			background-color: #ffffff;
+			height: 5px;
+			width: 40px;
+			@include animacao();
+		}
+
+		&:hover {
+
+			span, span:before, span:after {
+				background-color: $laranja;
+			}
+		}
+	}
+}

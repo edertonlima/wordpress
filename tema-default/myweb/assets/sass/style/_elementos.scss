@@ -1,0 +1,68 @@
+strong {
+	font-weight: $bold;
+}
+
+h1 {
+	max-width: $wLogo;
+	width: 100%;
+	@include animacao();
+
+	a {
+		img {
+			width: 100%;
+		}
+	}
+}
+
+h2 {
+	font-size: 3rem;
+	line-height: 3rem;
+	font-weight: $bold;
+}
+
+h3 {
+	font-size: 1.75rem;
+	line-height: 1.8rem;
+	font-weight: $bold;
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+p {
+	font-size: $font-size;
+	line-height: $font-size+.5;
+	font-weight: $light;
+
+	&.mini {
+		font-size: 1rem;
+		line-height: 1.25rem;
+	}
+	
+	@media all and (max-width: 770px){
+		font-size: 1.25rem;
+		line-height: (1.25rem)+.5;
+	}
+}
+
+.justify-center {
+	text-align: justify;  
+	/*-moz-text-align-last: center;
+	text-align-last: center;*/
+}
+
+.center {
+	text-align: center;
+}
+.no-margim {
+	margin: 0!important;
+}

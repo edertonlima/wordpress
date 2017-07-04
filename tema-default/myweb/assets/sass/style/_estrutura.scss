@@ -1,0 +1,59 @@
+html {
+	font-size: 100%; 
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+}
+
+body * {
+	font-family: $font-family;
+	color: $cor-txt;
+	font-weight: $regular;
+}
+
+.container {
+	max-width: $width; 
+	width: 100%;
+	padding: 0 $padding-container;
+	margin: 0 auto;
+	position: relative;
+	@include box-sizing();
+	@include clear();
+
+	@media all and (max-width: 1000px){
+		padding-left: ($padding-container)/2;
+		padding-right: ($padding-container)/2;
+	}	
+
+	@media all and (max-width: 600px) {
+		padding-left: ($padding-container)/4;
+		padding-right: ($padding-container)/4;
+	}
+}
+
+.row {
+	margin-right: ($padding-col)*(-1);
+	margin-left: ($padding-col)*(-1);
+	display: block;
+	@include clear();
+
+	[class*="col-"] {
+		float: left;
+		padding-right: $padding-col;
+		padding-left: $padding-col;
+		@include box-sizing();
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+
+	@for $i from 1 through 12 {
+		.col-#{$i} {
+			width: $i*(100%/12);
+		}
+	}
+}

@@ -1,0 +1,126 @@
+form {
+	margin-top: 30px;
+	width: 100%;
+	@include clear();
+
+	input, textarea {
+		max-width: 100%;
+	}
+
+	label {
+		font-size: 1.5rem; 
+		color: $verde;
+		font-weight: $light;
+		line-height: 35px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		&[for='mensagem'] {
+			opacity: 0.6;
+		}
+	}
+
+	input[type='text'], input[type='email'] {
+		background-color: transparent;
+		font-size: 1.5rem; 
+		color: $verde;
+		font-weight: $light;
+		line-height: 35px;
+		box-sizing: border-box;
+	}
+
+	textarea {
+		background-color: transparent;
+		font-size: 1.5rem; 
+		color: $verde;
+		font-weight: $light;
+		border: 2px solid #5a5758;
+		width: 100%;
+		height: 115px;
+		padding: 20px;
+		resize: vertical;
+		@include box-sizing();
+	}
+
+	button, input[type='submit'] {
+		width: 100%;
+		height: 55px;
+		line-height: 55px;
+		background-color: $verde;
+		color: #ffffff;
+		font-weight: $bold;
+		font-size: 1.75rem;
+		text-align: center;
+		@include animacao();
+
+		&:hover {
+			background-color: darken($verde, 10%);
+		}
+	}
+
+	fieldset {
+		span {
+			border: 2px solid #5a5758;
+			border-width: 0 0 2px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			display: block;
+		}
+		margin-top: 20px;
+	}
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9!important;
+}
+
+.select {
+	overflow: hidden;
+	background-color: #e6e7e8;
+	line-height: 44px;
+	height: 40px;
+	padding: 0 0 0 10px;
+	margin-bottom: 20px;
+	display: block;
+	position: relative;
+	@include box-sizing();
+
+	select {
+		width: 88%;
+		padding-right: 135px;
+		background-color: transparent;
+		font-weight: $regular;
+		font-size: 1.125rem;
+		color: $roxo;
+		box-sizing: content-box;
+		position: relative;
+		z-index: 99;
+		cursor: pointer;
+	}
+
+	&:after {
+		content: "\f107";
+		position: absolute;
+		right: 13px;
+		top: 12px;
+		font: normal normal normal 46px/1 FontAwesome;
+		cursor: pointer;
+		height: 15px;
+		line-height: 15px;
+		z-index: 0;
+	}
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {  
+	opacity: 1;
+	color: $verde;
+	font-weight: $light;
+	line-height: 35px;
+	font-size: 1.5rem; 
+}
+
+.msg-form {
+	text-align: center;
+	font-size: 1rem;
+}
