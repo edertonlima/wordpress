@@ -1,0 +1,85 @@
+@mixin bgimg($color: null, $image: null, $repeat: null, $size: null, $position: null){
+  @if ($color != null) {
+    background-color: $color;
+  } @else{
+    background-color: transparent;
+  }
+
+  @if ($image != null) {
+    $image: '../images/' + $image;
+    background-image: url($image);
+  }
+
+  @if ($repeat != null) {
+    background-repeat: $repeat;
+  } @else{
+    background-repeat: no-repeat;
+  }
+
+  @if ($size != null) {
+    background-size: $size;
+  }
+
+  @if ($position != null) {
+    background-position: $position;
+  }
+}
+
+@mixin text($font: null, $size: $font-size-base, $color: $gray, $weight: null, $transform: null, $line-height: null, $font-style: null){
+
+  @if ($font == null){
+    font-family: $font-family-base
+  } @else{
+    font-family: $font;
+  }
+  
+  @if ($size == null){
+    font-size: $font-size-base;
+  } @else{
+    font-size: $size;
+  }
+  
+  @if ($color == null){
+    color: $gray;
+  } @else{
+    color: $color;
+  }
+
+  @if ($weight != null){
+   font-weight: $weight; 
+  }
+
+  @if ($transform != null) {
+    text-transform: $transform;
+  }
+
+  @if ($line-height != null) {
+    line-height: $line-height;
+  } @else{
+    line-height: 120%;
+  }
+
+  @if ($font-style != null) {
+    font-style: $font-style;
+  }
+}
+
+@mixin box($border: null, $radius: null, $padding: null){
+  @if ($border == null) {
+    border: 0px;
+  } @else{
+    border: $border;
+  }
+
+  @if ($radius == null) {
+    @include border-radius(0px);
+  } @else{
+    @include border-radius($radius);
+  }
+
+  @if ($padding == null) {
+    padding: 0px;
+  } @else{
+    padding: $padding;
+  }
+}
